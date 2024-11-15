@@ -4,23 +4,26 @@
       <q-toolbar-title>
         <q-col>
           <router-link to="/">
-            <img src="path/to/logo.png" alt="Logo" style="height: 40px" />
+            <img
+              src="D:\Semester 5\impal-fe\travelu.frontend\Screenshot 2024-11-15 102652.png"
+              alt="Logo"
+              style="height: 40px"
+            />
           </router-link>
         </q-col>
       </q-toolbar-title>
 
       <q-space />
 
-      <q-col style="text-align: center; color: black">
-        <h5>asdfasd</h5>
+      <q-col class="q-px-md" style="text-align: left; color: black">
+        <h5>Home</h5>
       </q-col>
-      <q-col style="text-align: center; color: black">
-        <h5>asdfasd</h5>
+      <q-col class="q-px-md" style="text-align: left; color: black">
+        <h5>Book Tiket</h5>
       </q-col>
-      <q-col style="text-align: center; color: black">
-        <h5>asdfasd</h5>
+      <q-col class="q-px-md" style="text-align: left; color: black">
+        <h5>Suggestion</h5>
       </q-col>
-
       <q-space />
 
       <q-col style="display: flex; align-items: center; color: black">
@@ -30,9 +33,7 @@
           class="q-mr-sm"
           style="height: 40px; border-radius: 50%"
         />
-        <span class="q-mr-sm"
-          ><h6>{{ username }}</h6></span
-        >
+        <span class="q-mr-sm">{{ username }}]]</span>
         <q-btn flat icon="menu" @click="toggleMenu" />
       </q-col>
     </q-toolbar>
@@ -41,11 +42,6 @@
 
 <script>
 export default {
-  data() {
-    return {
-      username: "Hanif",
-    };
-  },
   methods: {
     toggleMenu() {
       // Logic to toggle the user profile menu
