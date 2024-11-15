@@ -1,10 +1,10 @@
 <template>
   <q-header elevated>
-    <q-toolbar style="background-color: #e2efff; height: 8vh">
+    <q-toolbar style="background-color: #e2efff; height: 10vh">
       <q-toolbar-title>
         <q-col>
           <router-link to="/">
-            <img :src="logo" alt="Logo" style="height: 40px" />
+            <img :src="logo" alt="Logo" style="height: 12vh; padding-top: 5%" />
           </router-link>
         </q-col>
       </q-toolbar-title>
@@ -41,7 +41,7 @@ export default {
   data() {
     return {
       username: "Hanif",
-      logo: "/logo.jpg",
+      logo: "/logo.png",
     };
   },
 };
