@@ -14,6 +14,12 @@
       <q-col style="text-align: center; color: black">
         <h5>asdfasd</h5>
       </q-col>
+      <q-col style="text-align: center; color: black">
+        <h5>asdfasd</h5>
+      </q-col>
+      <q-col style="text-align: center; color: black">
+        <h5>asdfasd</h5>
+      </q-col>
 
       <q-space />
 
@@ -24,7 +30,9 @@
           class="q-mr-sm"
           style="height: 40px; border-radius: 50%"
         />
-        <span class="q-mr-sm">User Name</span>
+        <span class="q-mr-sm"
+          ><h6>{{ username }}</h6></span
+        >
         <q-btn flat icon="menu" @click="toggleMenu" />
       </q-col>
     </q-toolbar>
@@ -33,6 +41,11 @@
 
 <script>
 export default {
+  data() {
+    return {
+      username: "Hanif",
+    };
+  },
   methods: {
     toggleMenu() {
       // Logic to toggle the user profile menu
