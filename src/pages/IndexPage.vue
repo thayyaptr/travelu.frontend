@@ -1,11 +1,12 @@
 <template>
-  <q-page class="flex flex-center">
+  <q-page>
     <BannerHome />
   </q-page>
 </template>
 
 <script>
 import BannerHome from "../components/BannerHome.vue";
+
 export default {
   name: "IndexPage",
   components: {
@@ -13,3 +14,7 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+/* Add styles specific to IndexPage here if needed */
+</style>
