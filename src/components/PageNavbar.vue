@@ -4,11 +4,7 @@
       <q-toolbar-title>
         <q-col>
           <router-link to="/">
-            <img
-              src="D:\Semester 5\impal-fe\travelu.frontend\Screenshot 2024-11-15 102652.png"
-              alt="Logo"
-              style="height: 40px"
-            />
+            <img :src="logo" alt="Logo" style="height: 40px" />
           </router-link>
         </q-col>
       </q-toolbar-title>
@@ -42,11 +38,11 @@
 
 <script>
 export default {
-  methods: {
-    toggleMenu() {
-      // Logic to toggle the user profile menu
-      console.log("Menu toggled");
-    },
+  data() {
+    return {
+      username: "Hanif",
+      logo: "/logo.jpg",
+    };
   },
 };
 </script>
