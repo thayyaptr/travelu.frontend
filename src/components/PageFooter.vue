@@ -1,33 +1,5 @@
 <template>
   <div class="q-pa-md">
-    <!-- Carousel -->
-    <q-carousel v-model="slide" animated arrows navigation infinite>
-      <q-carousel-slide
-        v-for="slide in slides"
-        :key="slide.name"
-        :name="slide.name"
-        :img-src="slide.imgSrc"
-      />
-    </q-carousel>
-
-    <!-- "Click And Go" Section -->
-    <div class="click-and-go">
-      <h2>Click And Go !!!</h2>
-      <div class="search-form">
-        <select class="dropdown">
-          <option>Select Departure</option>
-        </select>
-        <select class="dropdown">
-          <option>Select Destination</option>
-        </select>
-        <select class="dropdown">
-          <option>Passengers</option>
-        </select>
-        <input type="date" class="date-input" />
-        <button class="search-button">Search</button>
-      </div>
-    </div>
-
     <!-- Footer Section -->
     <div class="footer-section">
       <div class="footer-content">
@@ -38,7 +10,11 @@
       <div class="footer-content">
         <h3>Download The App</h3>
         <img src="assets/appstore.png" alt="App Store" class="app-store" />
-        <img src="assets/googleplay.png" alt="Google Play" class="google-play" />
+        <img
+          src="assets/googleplay.png"
+          alt="Google Play"
+          class="google-play"
+        />
       </div>
       <div class="footer-content">
         <h3>Contact Us</h3>
@@ -48,7 +24,6 @@
     </div>
   </div>
 </template>
-
 
 <script setup>
 import { ref } from "vue";
