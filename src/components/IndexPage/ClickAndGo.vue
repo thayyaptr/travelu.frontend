@@ -1,32 +1,40 @@
 <template>
   <div class="cover">
-    <div style="max-width: 1140px; width: 90%; margin: 0 auto">
+    <div style="max-width: 1400px; width: 90%; margin: 0 auto">
       <h2 class="q-mx-md">Click and Go!</h2>
       <div class="row">
         <div
-          class="col-9 row q-mx-md"
-          style="background-color: #dbe9f6; border-radius: 8px"
+          class="col-12 row q-mx-md"
+          style="
+            background-color: #dbe9f6;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          "
         >
           <q-select
             v-model="departure"
             :options="departureOptions"
             label="Pilih Keberangkatan"
-            class="col-6 q-pa-md"
+            class="col-5 q-pa-md"
           />
+          <div class="col-2"></div>
           <q-select
             v-model="destination"
             :options="destinationOptions"
             label="Pilih Destinasi"
-            class="col-6 q-pa-md"
+            class="col-5 q-pa-md"
           />
           <q-select
             v-model="passengerCount"
             :options="passengerOptions"
             label="Jumlah Penumpang"
-            class="col-6 q-pa-md"
+            class="col-3 q-pa-md"
           />
+
+          <!-- Template buat Date Picker dari Quasar -->
+          <!-- https://quasar.dev/vue-components/date#custom-title-and-subtitle -->
           <q-input
-            class="col-6 q-pa-md"
+            class="col-3 q-pa-md"
             filled
             v-model="date"
             mask="date"
@@ -48,20 +56,24 @@
               </q-icon>
             </template>
           </q-input>
-        </div>
-        <div
-          class="col-2 q-mx-lg"
-          style="background-color: #dbe9f6; border-radius: 8px"
-        >
-          <q-btn
-            label="Search"
-            icon="search"
-            class="search-button"
-            @click="onSearch"
-            color="primary"
-            padding="lg"
-            style="height: 100%"
-          />
+          <div class="col-2"></div>
+          <div
+            class="col-2 q-pa-md"
+            style="
+              background-color: #dbe9f6;
+              border-radius: 8px;
+              text-align: center;
+            "
+          >
+            <q-btn
+              label="Search"
+              icon="search"
+              @click="onSearch"
+              color="primary"
+              padding="md"
+            />
+          </div>
+          <div class="col-2"></div>
         </div>
       </div>
     </div>
@@ -101,13 +113,5 @@ export default {
   background-size: cover;
   width: 100%;
   padding: 20px 0;
-}
-
-.dropdown {
-  padding: 10px 0;
-}
-
-.search-button {
-  width: 100%;
 }
 </style>
