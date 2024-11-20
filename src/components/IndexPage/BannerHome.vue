@@ -1,3 +1,4 @@
+2
 <template>
   <div class="q-pa-md">
     <!-- Carousel -->
@@ -20,10 +21,10 @@ const slide = ref(1);
 
 // Define an array of slides for better maintainability
 const slides = [
-  { name: 1, imgSrc: "https://cdn.quasar.dev/img/mountains.jpg" },
-  { name: 2, imgSrc: "https://cdn.quasar.dev/img/parallax1.jpg" },
-  { name: 3, imgSrc: "https://cdn.quasar.dev/img/parallax2.jpg" },
-  { name: 4, imgSrc: "https://cdn.quasar.dev/img/quasar.jpg" },
+  { name: 1, imgSrc: "jakarta.jpg" },
+  { name: 2, imgSrc: "surabaya.jpg" },
+  { name: 3, imgSrc: "Gedung_Sate_Bandung_Jawa_Barat.jpg" },
+  { name: 4, imgSrc: "bandung3.jpg" },
 ];
 </script>
 

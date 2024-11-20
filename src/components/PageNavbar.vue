@@ -4,7 +4,7 @@
       <q-toolbar-title>
         <q-col>
           <router-link to="/">
-            <img :src="logo" alt="Logo" style="height: 12vh; padding-top: 5%" />
+            <img :src="logo" alt="Logo" style="height: 12vh" padding="top" />
           </router-link>
         </q-col>
       </q-toolbar-title>
