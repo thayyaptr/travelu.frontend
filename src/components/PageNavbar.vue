@@ -1,12 +1,10 @@
 <template>
   <q-header elevated>
     <q-toolbar
-      style="background-color: #e2efff; color: black; font-size: 2.25rem"
+      style="background-color: #e2efff; color: black; font-size: 2rem"
       class="q-pa-sm"
     >
-      <q-avatar size="5rem">
-        <img :src="logo" />
-      </q-avatar>
+      <img :src="logo" style="max-height: 7vh" />
       <span style="font-weight: bold" class="q-mr-lg">Travel-U</span>
       <div>
         <q-btn
