@@ -11,28 +11,28 @@
       <div>
         <q-btn
           flat
-          size="1.2rem"
+          size="1.3rem"
           style="font-weight: 400"
           label="Beranda"
           @click="goHome"
         />
         <q-btn
           flat
-          size="1.2rem"
+          size="1.3rem"
           style="font-weight: 400"
           label="Pesan Tiket"
           @click="goHome"
         />
         <q-btn
           flat
-          size="1.2rem"
+          size="1.3rem"
           style="font-weight: 400"
           label="Komplain"
           @click="goHome"
         />
         <q-btn
           flat
-          size="1.2rem"
+          size="1.3rem"
           style="font-weight: 400"
           label="Tentang Kami"
           @click="goHome"
