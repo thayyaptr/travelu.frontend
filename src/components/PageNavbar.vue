@@ -2,7 +2,7 @@
   <q-header elevated>
     <q-toolbar
       style="background-color: #e2efff; color: black; font-size: 2.25rem"
-      class="q-pa-md"
+      class="q-pa-sm"
     >
       <q-avatar size="5rem">
         <img :src="logo" />
@@ -11,28 +11,28 @@
       <div>
         <q-btn
           flat
-          size="1.5rem"
+          size="1.2rem"
           style="font-weight: 400"
           label="Beranda"
           @click="goHome"
         />
         <q-btn
           flat
-          size="1.5rem"
+          size="1.2rem"
           style="font-weight: 400"
           label="Pesan Tiket"
           @click="goHome"
         />
         <q-btn
           flat
-          size="1.5rem"
+          size="1.2rem"
           style="font-weight: 400"
           label="Komplain"
           @click="goHome"
         />
         <q-btn
           flat
-          size="1.5rem"
+          size="1.2rem"
           style="font-weight: 400"
           label="Tentang Kami"
           @click="goHome"
