@@ -57,7 +57,7 @@
         </div>
       </q-form>
       <div class="text-center q-mt-md">
-        <h5 class="text-h5">
+        <h5 class="text-h12">
           Don't have an account? <span class="text-red">Sign up</span>
         </h5>
       </div>
