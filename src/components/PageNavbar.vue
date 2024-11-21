@@ -1,49 +1,62 @@
 <template>
   <q-header elevated>
-    <q-toolbar style="background-color: #e2efff; height: 10vh">
-      <q-toolbar-title>
-        <q-col style="display: flex; align-items: center">
-          <router-link to="/">
-            <img
-              :src="logo"
-              alt="Logo"
-              style="height: 7vh; margin-right: 16px"
-            />
-          </router-link>
-          <q-btn
-            flat
-            label="Home"
-            @click="goHome"
-            class="q-mr-md"
-            text-color="black"
-          />
-          <q-btn
-            flat
-            label="Book Tiket"
-            @click="goToBookTicket"
-            class="q-mr-md"
-            text-color="black"
-          />
-          <q-btn
-            flat
-            label="Suggestion"
-            @click="goToSuggestion"
-            text-color="black"
-          />
-        </q-col>
-      </q-toolbar-title>
-
-      <q-space />
-
-      <q-col style="display: flex; align-items: center; color: black">
-        <img
-          src="path/to/user-pic.png"
-          alt="User  Pic"
-          class="q-mr-sm"
-          style="height: 40px; border-radius: 50%"
+    <q-toolbar
+      style="background-color: #e2efff; color: black; font-size: 2.25rem"
+      class="q-pa-md"
+    >
+      <q-avatar size="5rem">
+        <img :src="logo" />
+      </q-avatar>
+      <span style="font-weight: bold" class="q-mr-lg">Travel-U</span>
+      <div>
+        <q-btn
+          flat
+          size="1.5rem"
+          style="font-weight: 500"
+          label="Beranda"
+          @click="goHome"
         />
-        <span class="q-mr-sm">{{ username }}</span>
-        <q-btn flat icon="menu" @click="toggleMenu" aria-label="Toggle Menu" />
+        <q-btn
+          flat
+          size="1.5rem"
+          style="font-weight: 500"
+          label="Pesan Tiket"
+          @click="goHome"
+        />
+        <q-btn
+          flat
+          size="1.5rem"
+          style="font-weight: 500"
+          label="Komplain"
+          @click="goHome"
+        />
+        <q-btn
+          flat
+          size="1.5rem"
+          style="font-weight: 500"
+          label="Tentang Kami"
+          @click="goHome"
+        />
+      </div>
+      <q-toolbar-title> </q-toolbar-title>
+
+      <q-col style="display: flex; align-items: center">
+        <img
+          src="https://static.vecteezy.com/system/resources/previews/036/594/092/non_2x/man-empty-avatar-photo-placeholder-for-social-networks-resumes-forums-and-dating-sites-male-and-female-no-photo-images-for-unfilled-user-profile-free-vector.jpg"
+          alt="User  Pic"
+          class="q-mr-lg"
+          style="height: 4rem; border-radius: 50%"
+        />
+        <span class="q-mr-sm" style="font-size: 1.5rem; font-weight: bold">{{
+          username
+        }}</span>
+        <q-btn
+          flat
+          icon="menu"
+          size="1.75rem"
+          @click="toggleMenu"
+          aria-label="Toggle Menu"
+        />
       </q-col>
     </q-toolbar>
   </q-header>
