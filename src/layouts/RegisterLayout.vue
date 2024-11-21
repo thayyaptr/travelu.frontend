@@ -1,7 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <!-- Page Navbar -->
-    <LoginNavbar />
+    <RegisterNavbar />
 
     <!-- Page Body -->
     <q-page-container>
@@ -11,8 +11,9 @@
 </template>
 
 <script setup>
-import LoginNavbar from "src/components/LoginNavbar.vue"; // Ensure the path is correct
+import LoginNavbar from "src/components/RegisterNavbar.vue"; // Ensure the path is correct
 import PageFooter from "src/components/PageFooter.vue"; // Ensure the path is correct
+import RegisterNavbar from "src/components/RegisterNavbar.vue";
 
 // Define component options
 defineOptions({
