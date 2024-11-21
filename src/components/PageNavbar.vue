@@ -12,28 +12,28 @@
         <q-btn
           flat
           size="1.5rem"
-          style="font-weight: 500"
+          style="font-weight: 400"
           label="Beranda"
           @click="goHome"
         />
         <q-btn
           flat
           size="1.5rem"
-          style="font-weight: 500"
+          style="font-weight: 400"
           label="Pesan Tiket"
           @click="goHome"
         />
         <q-btn
           flat
           size="1.5rem"
-          style="font-weight: 500"
+          style="font-weight: 400"
           label="Komplain"
           @click="goHome"
         />
         <q-btn
           flat
           size="1.5rem"
-          style="font-weight: 500"
+          style="font-weight: 400"
           label="Tentang Kami"
           @click="goHome"
         />
