@@ -77,12 +77,7 @@ export default {
   data() {
     return {
       username: "Hanif",
-<<<<<<< Updated upstream
-      logo: "/logo.png",
-      menu: false, // Menu state for dropdown
-=======
       logo: "/logo-text.png",
->>>>>>> Stashed changes
     };
   },
   methods: {
