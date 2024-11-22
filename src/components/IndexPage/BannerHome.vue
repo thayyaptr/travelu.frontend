@@ -1,13 +1,13 @@
 <template>
   <div class="q-pa-md">
     <!-- Carousel -->
-    <q-carousel 
-      v-model="slide" 
-      animated 
-      arrows 
-      infinite 
-      autoplay 
-      :autoplay-speed="3000" 
+    <q-carousel
+      v-model="slide"
+      animated
+      arrows
+      infinite
+      autoplay
+      :autoplay-speed="3000"
       :navigation="false"
     >
       <q-carousel-slide
@@ -29,10 +29,10 @@ const slide = ref(1);
 
 // Define an array of slides for better maintainability
 const slides = [
-  { name: 1, imgSrc: "BannerTravel-U.png" },
-  { name: 2, imgSrc: "https://reservasi.mylintas.co.id/assets/uploads/promo//a168431263a3eccd014f33e5ee6883dc.jpg" },
-  { name: 3, imgSrc: "https://reservasi.mylintas.co.id/assets/uploads/promo//d3870d063be2c7af107e708ca6e9a3a0.jpg" },
-  { name: 4, imgSrc: "https://reservasi.mylintas.co.id/assets/uploads/promo//aec77ee4e77efb2ff3385d23179bcc64.jpeg" },
+  { name: 1, imgSrc: "jakarta.png" },
+  { name: 2, imgSrc: "Gedung_Sate_Bandung_Jawa_Barat.jpg" },
+  { name: 3, imgSrc: "surabaya.jpg" },
+  { name: 4, imgSrc: "bandung3.jpg" },
 ];
 </script>
 
