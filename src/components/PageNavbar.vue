@@ -4,7 +4,9 @@
       style="background-color: #e2efff; color: black; font-size: 2rem"
       class="q-pa-sm"
     >
-      <img :src="logo" style="max-height: 7vh" />
+      <a href="/">
+        <img :src="logo" style="max-height: 7vh" />
+      </a>
       <span style="font-weight: bold" class="q-mr-lg">Travel-U</span>
       <div>
         <q-btn
@@ -55,6 +57,16 @@
           @click="toggleMenu"
           aria-label="Toggle Menu"
         />
+        <q-menu v-model="menu" auto-close>
+          <q-list>
+            <q-item @click="goToLogin">
+              <q-item-section>Login</q-item-section>
+            </q-item>
+            <q-item @click="goToRegister">
+              <q-item-section>Register</q-item-section>
+            </q-item>
+          </q-list>
+        </q-menu>
       </q-col>
     </q-toolbar>
   </q-header>
@@ -66,6 +78,7 @@ export default {
     return {
       username: "Hanif",
       logo: "/logo.png",
+      menu: false, // Menu state for dropdown
     };
   },
   methods: {
@@ -78,8 +91,14 @@ export default {
     goToSuggestion() {
       this.$router.push("/suggestion"); // Adjust the path as needed
     },
+    goToLogin() {
+      this.$router.push("/login");
+    },
+    goToRegister() {
+      this.$router.push("/register");
+    },
     toggleMenu() {
-      // Implement your menu toggle logic here
+      this.menu = !this.menu; // Toggle menu state
     },
   },
 };

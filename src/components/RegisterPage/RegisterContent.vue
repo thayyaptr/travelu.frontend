@@ -76,49 +76,71 @@
 </template>
 
 <script>
+import { ref } from "vue";
+import { api } from "boot/axios"; // Make sure this is correctly configured
+import { useQuasar } from "quasar";
+
 export default {
-  data() {
-    return {
-      fullName: "",
-      email: "",
-      password: "",
-      emailError: "",
-      passwordError: "",
-    };
-  },
-  methods: {
-    onSubmit() {
-      this.emailError = "";
-      this.passwordError = "";
+  setup() {
+    const $q = useQuasar();
+    const fullName = ref("");
+    const email = ref("");
+    const password = ref("");
+    const emailError = ref("");
+    const passwordError = ref("");
+
+    const onSubmit = async () => {
+      emailError.value = "";
+      passwordError.value = "";
 
       // Validate email
-      if (!this.email) {
-        this.emailError = "Email cannot be empty";
+      if (!email.value) {
+        emailError.value = "Email tidak boleh kosong";
       } else if (
-        !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(this.email)
+        !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email.value)
       ) {
-        this.emailError = "Email tidak valid";
+        emailError.value = "Email tidak valid";
       }
 
       // Validate password
-      if (!this.password) {
-        this.passwordError = "Password cannot be empty";
-      } else if (this.password.length < 8) {
-        this.passwordError = "Password must be at least 8 characters";
-      } else if (!/[A-Z]/.test(this.password)) {
-        this.passwordError = "Password must contain at least one uppercase";
-      } else if (!/[0-9]/.test(this.password)) {
-        this.passwordError = "Password must contain at least one number";
-      } else if (!/[-!$%^&*()_+|~=`{}\[\]:";'<>?,./]/.test(this.password)) {
-        this.passwordError =
+      if (!password.value) {
+        passwordError.value = "Password cannot be empty";
+      } else if (password.value.length < 8) {
+        passwordError.value = "Password must be at least 8 characters";
+      } else if (!/[A-Z]/.test(password.value)) {
+        passwordError.value = "Password must contain at least one uppercase";
+      } else if (!/[0-9]/.test(password.value)) {
+        passwordError.value = "Password must contain at least one number";
+      } else if (!/[-!$%^&*()_+|~=`{}\[\]:";'<>?,./]/.test(password.value)) {
+        passwordError.value =
           "Password must contain at least one special character";
       }
 
-      // If there are no errors, proceed with login
-      if (!this.emailError && !this.passwordError) {
-        // Handle login logic here
+      if (true) {
+        const requestBody = {
+          name: fullName.value,
+          email: email.value,
+          password: password.value,
+          permissions: "0", // Will be implicitly made into 0
+        };
+
+        try {
+          const response = await api.post(`/api/users`, requestBody);
+          console.log("User  created successfully:", response.data);
+          // You can add further actions here, like redirecting the user or showing a success message
+        } catch (error) {
+          console.error("Error creating user:", error);
+          $q.notify({
+            color: "negative",
+            position: "top",
+            message: "Error creating user. Please try again.",
+            icon: "report_problem",
+          });
+        }
       }
-    },
+    };
+
+    return { fullName, email, password, emailError, passwordError, onSubmit };
   },
 };
 </script>
