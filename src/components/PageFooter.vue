@@ -2,7 +2,7 @@
   <div
     class="row q-pt-lg"
     style="
-      background-color: #4b8aba;
+      background-color: #3876e2;
       color: black;
       font-size: 3vh;
       color: white;

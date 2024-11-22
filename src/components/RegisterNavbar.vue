@@ -1,7 +1,7 @@
 <template>
   <q-header elevated>
     <q-toolbar
-      style="background-color: #e2efff; color: black; font-size: 2rem"
+      style="background-color: #0077b6; color: white; font-size: 2rem"
       class="q-pa-sm"
     >
       <img :src="logo" style="max-height: 7vh" />
@@ -15,7 +15,7 @@ export default {
   data() {
     return {
       username: "Hanif",
-      logo: "/logo.png",
+      logo: "/logo-text.png",
     };
   },
   methods: {

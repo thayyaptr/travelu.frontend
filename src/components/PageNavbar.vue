@@ -1,7 +1,7 @@
 <template>
   <q-header elevated>
     <q-toolbar
-      style="background-color: #e2efff; color: black; font-size: 2rem"
+      style="background-color: #0077b6; color: white; font-size: 2rem"
       class="q-pa-sm"
     >
       <a href="/">
@@ -77,8 +77,12 @@ export default {
   data() {
     return {
       username: "Hanif",
+<<<<<<< Updated upstream
       logo: "/logo.png",
       menu: false, // Menu state for dropdown
+=======
+      logo: "/logo-text.png",
+>>>>>>> Stashed changes
     };
   },
   methods: {
@@ -106,10 +110,10 @@ export default {
 
 <style scoped>
 .q-header {
-  background-color: black; /* Adjust the background color */
+  background-color: rgb(255, 255, 255); /* Adjust the background color */
 }
 
 .custom-toolbar {
-  background-color: black; /* Set the toolbar color */
+  background-color: rgb(255, 255, 255); /* Set the toolbar color */
 }
 </style>
