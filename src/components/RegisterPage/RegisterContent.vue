@@ -59,17 +59,11 @@
           />
         </div>
       </q-form>
-      <div class="text-center q-mt-md">
+      <div class="text-center q-mb-md">
         <q-typography tag="h5" class="text-blue">
           Already have an account?
         </q-typography>
         <q-typography tag="h5" class="text-red"> Sign In </q-typography>
-      </div>
-      <div class="text-center q-mt-xl">
-        <q-typography tag="h5"> Not Registered yet? </q-typography>
-        <q-typography tag="h5" class="text-green">
-          Create an account
-        </q-typography>
       </div>
     </div>
   </div>
