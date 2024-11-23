@@ -23,13 +23,10 @@
           label="Pesan Tiket"
           @click="goHome"
         />
-        <q-btn
-          flat
-          size="1.3rem"
-          style="font-weight: 400"
-          label="Komplain"
-          @click="goHome"
-        />
+        <a href="/complain" style="color: white">
+          <q-btn flat size="1.3rem" style="font-weight: 400" label="Komplain" />
+        </a>
+
         <q-btn
           flat
           size="1.3rem"
@@ -87,8 +84,8 @@ export default {
     goToBookTicket() {
       this.$router.push("/book-ticket"); // Adjust the path as needed
     },
-    goToSuggestion() {
-      this.$router.push("/suggestion"); // Adjust the path as needed
+    goToComplain() {
+      this.$router.push("/complain"); // Adjust the path as needed
     },
     goToLogin() {
       this.$router.push("/login");

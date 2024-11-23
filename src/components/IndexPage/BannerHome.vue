@@ -1,5 +1,5 @@
 <template>
-  <div class="q-pa-md">
+  <div class="">
     <!-- Carousel -->
     <q-carousel
       v-model="slide"
@@ -7,6 +7,7 @@
       arrows
       infinite
       autoplay
+      height="50vh"
       :autoplay-speed="3000"
       :navigation="false"
     >
