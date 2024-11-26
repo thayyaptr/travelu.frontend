@@ -24,8 +24,8 @@ const routes = [
   },
   {
     path: "/password",
-    component: () => import("layouts/Pass"),
-    children: [{ path: "", component: () => import("pages/RegisterPage.vue") }],
+    component: () => import("layouts/PassLayout.vue"),
+    children: [{ path: "", component: () => import("pages/PassPage.vue") }],
   },
   // Always leave this as last one,
   // but you can also remove it
