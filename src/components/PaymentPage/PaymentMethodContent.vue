@@ -22,6 +22,33 @@
     </div>
 
     
+    <div class="row" style="height: 20vh; font-size: 2rem; margin-top: 20px; margin-left : 70px ;margin-right : 70px;  background-color: #F0F0F9;">
+        <div class="col" style="height: 7vh; font-size: 2rem; margin-top: 60px; margin-left : 70px ;margin-right : 70px;  background-color: #D9D9D9;"> 
+            departure <br>
+
+
+        </div>
+
+    </div>
+
+    <div class="row" style="height: 10vh; font-size: 2rem; margin-top: 20px; margin-left : 70px ;margin-right : 70px;;  background-color: #F0F0F9;;">
+        
+    </div>
+
+    <div class="row" style="height: 5vh; font-size: 2rem; margin-top: 20px; margin-left : 70px ;margin-right : 70px;;  background-color: #F0F0F9;;">
+        
+    </div>
+
+    <div class="row" style="height: 7vh; font-size: 2rem; margin-top: 20px; margin-left : 70px ;margin-right : 70px;;  background-color: #F0F0F9;;">
+        
+    </div>
+
+    <div class="row" style="height: 5vh; padding: 10px 40px; margin-bottom: 10px; margin-left: 70px; margin-right: 70px; display: flex; align-items: center;">
+      <div class="col" style="display: flex; justify-content: flex-end;">
+        <button class="custom-btn"> continue payment </button>
+      </div>
+    </div>
+    
 </template>
 
 
@@ -102,5 +129,22 @@ export default {
 /* Hover efek untuk item dropdown */
 .dropdown-item:hover {
   background-color: #f5f5f5;
+}
+
+/* Button style */
+.custom-btn {
+  background-color: #a3b8d8;
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+/* Hover effect for button */
+.custom-btn:hover {
+  background-color: #91a8cc;
 }
 </style>
