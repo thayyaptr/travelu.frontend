@@ -1,56 +1,72 @@
-<template>
-    <div class="row" style= "height: 5vh; font-size: 2rem; padding : 30px 40px 10px 40px;  border-bottom: 2px solid black; padding-bottom: 120px; margin-bottom: 10px; margin-left : 70px ;margin-right : 70px;">
-        <div class="col-7 text-align text-black align-self-center">
-            Bandung, Buah Batu -> Jakarta, Grogol <br>
-            Monday, 28 October 2024 | 1 Passenger
+<template class="">
+  <!-- Semua dalam satu column -->
+  <div class="q-pa-lg flex flex-center">
+    <div class="col q-pt-lg" style="width: 90%">
+      <div class="row" style="font-size: 1.5rem">
+        <div class="col-7 text-align text-black">
+          Bandung, Buah Batu -> Jakarta, Grogol <br />
+          Monday, 28 October 2024 | 1 Passenger
         </div>
-        
-        <div class="col-5" style="display: flex; justify-content: flex-end; position: relative;">
-            <br>
-            <div class="dropdown-container">
+
+        <div
+          class="col-5"
+          style="display: flex; justify-content: flex-end; position: relative"
+        >
+          <br />
+          <div class="dropdown-container">
             <button class="dropdown-btn" @click="toggleDropdown">
-                Order Details
-            <span class="dropdown-arrow"></span>
+              Order Details
+              <span class="dropdown-arrow"></span>
             </button>
             <ul v-if="isOpen" class="dropdown-menu">
-                <li class="dropdown-item">Option 1</li>
-                <li class="dropdown-item">Option 2</li>
-                <li class="dropdown-item">Option 3</li>
+              <li class="dropdown-item">Option 1</li>
+              <li class="dropdown-item">Option 2</li>
+              <li class="dropdown-item">Option 3</li>
             </ul>
-            </div>
+          </div>
         </div>
-    </div>
+      </div>
 
-    
-    <div class="row" style="height: 20vh; font-size: 2rem; margin-top: 20px; margin-left : 70px ;margin-right : 70px;  background-color: #F0F0F9;">
-        <div class="col" style="height: 7vh; font-size: 2rem; margin-top: 60px; margin-left : 70px ;margin-right : 70px;  background-color: #D9D9D9;"> 
-            departure <br>
+      <hr style="border: 2px solid #d9d9d9; margin: 10px 0" />
 
-
+      <div
+        class="row q-my-sm"
+        style="background-color: #f0f0f9; font-size: 1.2rem"
+      >
+        <div class="row q-my-sm" style="background-color: #d9d9d9; width: 100%">
+          departure
         </div>
+        <div class="row q-my-sm" style="background-color: #d9d9d9; width: 100%">
+          departure
+        </div>
+        <div class="row q-my-sm" style="background-color: #d9d9d9; width: 100%">
+          departure
+        </div>
+      </div>
 
-    </div>
+      <div
+        class="row q-my-sm"
+        style="height: 10vh; font-size: 2rem; background-color: #f0f0f9"
+      ></div>
 
-    <div class="row" style="height: 10vh; font-size: 2rem; margin-top: 20px; margin-left : 70px ;margin-right : 70px;;  background-color: #F0F0F9;;">
-        
-    </div>
+      <div
+        class="row q-my-sm"
+        style="height: 5vh; font-size: 2rem; background-color: #f0f0f9"
+      ></div>
 
-    <div class="row" style="height: 5vh; font-size: 2rem; margin-top: 20px; margin-left : 70px ;margin-right : 70px;;  background-color: #F0F0F9;;">
-        
-    </div>
+      <div
+        class="row q-my-sm"
+        style="height: 7vh; font-size: 2rem; background-color: #f0f0f9"
+      ></div>
 
-    <div class="row" style="height: 7vh; font-size: 2rem; margin-top: 20px; margin-left : 70px ;margin-right : 70px;;  background-color: #F0F0F9;;">
-        
-    </div>
-
-    <div class="row" style="height: 5vh; padding: 10px 40px; margin-bottom: 10px; margin-left: 70px; margin-right: 70px; display: flex; align-items: center;">
-      <div class="col" style="display: flex; justify-content: flex-end;">
-        <button class="custom-btn"> continue payment </button>
+      <div class="row" style="height: 5vh; display: flex; align-items: center">
+        <div class="col" style="display: flex; justify-content: flex-end">
+          <button class="custom-btn">continue payment</button>
+        </div>
       </div>
     </div>
-    
+  </div>
 </template>
-
 
 <script>
 export default {
