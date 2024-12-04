@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import OtpContent from ".../components/OtpPage/OtpContent.vue";
+import OtpContent from "src/components/OtpPage/OtpContent.vue";
 
 export default {
   name: "OtpPage",

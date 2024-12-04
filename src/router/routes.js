@@ -6,10 +6,22 @@ const routes = [
       { path: "", component: () => import("pages/IndexPage.vue") },
       { path: "book", component: () => import("pages/IndexPage.vue") },
       { path: "complain", component: () => import("pages/ComplainPage.vue") },
-      { path: "paymentmethod",component: () => import("pages/PaymentMethodPage.vue") },
-      { path: "waitingforpayment",component: () => import("pages/WaitingForPaymentPage.vue") },
-      { path: "paymentsuccess",component: () => import("pages/PaymentStatusSuccessPage.vue") },
-      { path: "paymentfailed",component: () => import("pages/PaymentStatusFailedPage.vue") },
+      {
+        path: "paymentmethod",
+        component: () => import("pages/PaymentMethodPage.vue"),
+      },
+      {
+        path: "waitingforpayment",
+        component: () => import("pages/WaitingForPaymentPage.vue"),
+      },
+      {
+        path: "paymentsuccess",
+        component: () => import("pages/PaymentStatusSuccessPage.vue"),
+      },
+      {
+        path: "paymentfailed",
+        component: () => import("pages/PaymentStatusFailedPage.vue"),
+      },
     ],
   },
   {
