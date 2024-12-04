@@ -27,6 +27,11 @@ const routes = [
     component: () => import("layouts/PassLayout.vue"),
     children: [{ path: "", component: () => import("pages/PassPage.vue") }],
   },
+  {
+    path: "/otp",
+    component: () => import("layouts/OtpLayout.vue"),
+    children: [{ path: "", component: () => import("pages/OtpPage.vue") }],
+  },
   // Always leave this as last one,
   // but you can also remove it
   {
