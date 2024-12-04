@@ -1,7 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <!-- Page Navbar -->
-    <PassNavbar />
+    <OtpNavbar />
 
     <!-- Page Body -->
     <q-page-container>
@@ -11,11 +11,11 @@
 </template>
 
 <script setup>
-import PassNavbar from "src/components/PassNavbar.vue";
+import OtpNavbar from "src/components/OtpNavbar.vue";
 
 // Define component options
 defineOptions({
-  name: "MainLayout",
+  name: "OtpLayout",
 });
 </script>
 

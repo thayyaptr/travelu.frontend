@@ -50,18 +50,6 @@ export default {
     },
   },
   methods: {
-    validateEmail() {
-      if (this.email === "") {
-        this.emailError = "Please enter your email";
-        return false;
-      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.email)) {
-        this.emailError = "Email tidak valid";
-        return false;
-      } else {
-        this.emailError = "";
-        return true;
-      }
-    },
     validatePassword() {
       if (this.password === "") {
         this.passwordError = "Please enter your password";
