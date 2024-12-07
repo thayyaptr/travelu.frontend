@@ -22,6 +22,10 @@ const routes = [
         path: "paymentfailed",
         component: () => import("pages/PaymentStatusFailedPage.vue"),
       },
+      {
+        path: "orderticket",
+        component: () => import("pages/OrderTicketPage.vue"),
+      },
     ],
   },
   {
