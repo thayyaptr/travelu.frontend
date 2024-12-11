@@ -67,14 +67,20 @@
       </div>
     </div>
   </div>
+  <!-- <VerifEmail :email="laudadrakagmailcom" /> -->
 </template>
 
 <script>
 import { ref } from "vue";
 import { api } from "boot/axios"; // Make sure this is correctly configured
 import { useQuasar } from "quasar";
+import VerifEmail from "./VerifEmail.vue";
 
 export default {
+  name: "App",
+  components: {
+    // VerifEmail,
+  },
   setup() {
     const $q = useQuasar();
     const fullName = ref("");
