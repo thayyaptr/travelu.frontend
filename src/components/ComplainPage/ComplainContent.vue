@@ -9,27 +9,69 @@
         <div class="main-box">
           <!-- Feedback Header Box -->
           <div class="feedback-header">
-            <h2>Your Feedback !!!</h2>
-            <p>Give us your feedback on our services.</p>
+            <h2>Share Your Thoughts</h2>
+            <p>We value your feedback and would love to hear about your experience.</p>
+          </div>
+          
+          <!-- Rating Box -->
+          <div class="rating-input">
+            <q-rating
+              v-model="rating"
+              :max="5"
+              size="2em"
+              color="primary"
+              icon="star_border"
+              icon-selected="star"
+              icon-half="star_half"
+            />
           </div>
           
           <!-- Textarea Box -->
           <div class="feedback-input">
-            <textarea
-              placeholder="Typing Here..."
-              class="feedback-textarea"
-            ></textarea>
+            <q-input
+              v-model="feedback"
+              label="Your Feedback and Suggestions"
+              placeholder="Type your feedback and suggestions here..."
+              outlined
+              dense
+              type="textarea"
+              rows="5"
+              class="modern-textarea"
+            />
           </div>
         </div>
         
         <!-- Submit Button -->
         <div class="button-container">
-          <button class="submit-button">Submit</button>
+          <q-btn
+            label="Submit"
+            color="primary"
+            @click="submitFeedback"
+          />
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      rating: 0,
+      feedback: '',
+    }
+  },
+  
+  methods: {
+    submitFeedback() {
+      // Submit feedback logic here
+      console.log('Rating:', this.rating)
+      console.log('Feedback:', this.feedback)
+    }
+  }
+}
+</script>
 
 <style scoped>
 /* Import Koh Santepheap font */
@@ -47,6 +89,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-image: linear-gradient(to bottom, #f7f7f7, #ffffff);
 }
 
 .header-space {
@@ -56,13 +99,12 @@
 }
 
 .container {
-  width: 100%;
-  max-width: 1200px; /* Increased max-width */
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 40px;
+  width: 50%;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #ffffff;
 }
 
 .content-wrapper {
@@ -70,23 +112,20 @@
 }
 
 .main-box {
-  background-color: #f5f5f5;
-  border-radius: 8px;
-  padding: 30px; /* Increased padding */
-  margin-bottom: 20px;
+  padding: 20px;
+  text-align: center;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .feedback-header {
-  background-color: #e6e6e6;
-  border-radius: 8px;
-  padding: 20px; /* Increased padding */
-  text-align: center;
-  margin-bottom: 25px; /* Increased margin */
+  margin-bottom: 20px;
 }
 
 h2 {
-  font-size: 32px; /* Increased font size */
-  font-weight: 400; /* Adjusted for Koulen font */
+  font-size: 24px;
+  font-weight: 400;
   color: #000;
   margin: 0;
   margin-bottom: 8px;
@@ -94,81 +133,58 @@ h2 {
 }
 
 p {
-  font-size: 16px; /* Increased font size */
+  font-size: 16px;
+  font-weight: 400;
   color: #666;
   margin: 0;
+  margin-bottom: 20px;
   letter-spacing: 0.3px;
+}
+
+.rating-input {
+  margin-bottom: 20px;
 }
 
 .feedback-input {
-  background-color: #e6e6e6;
-  border-radius: 8px;
-  padding: 20px; /* Increased padding */
-  margin: 0 auto;
-  width: 90%;
+  margin-bottom: 20px;
 }
 
-.feedback-textarea {
-  width: 100%;
-  min-height: 120px; /* Increased height */
-  padding: 0;
-  border: none;
-  font-size: 16px; /* Increased font size */
-  resize: none;
-  background-color: transparent;
+.modern-textarea {
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 400;
   color: #666;
-  letter-spacing: 0.3px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
 }
 
-.feedback-textarea::placeholder {
+.modern-textarea .q-field__label {
+  font-size: 16px;
+  font-weight: 400;
   color: #666;
-  font-family: 'Koulen', display;
+}
+
+.modern-textarea .q-field__control {
+  padding: 10px;
 }
 
 .button-container {
   display: flex;
-  justify-content: flex-end;
-  padding-right: 30px; /* Increased padding */
-}
-
-.submit-button {
-  background-color: #e6e6e6;
-  color: #000;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 30px; /* Increased padding */
-  font-size: 16px; /* Increased font size */
-  cursor: pointer;
-  transition: background-color 0.2s;
-  letter-spacing: 0.3px;
-}
-
-.submit-button:hover {
-  background-color: #d9d9d9;
+  justify-content: center;
 }
 
 /* Making the component responsive */
-@media (max-width: 1200px) {
+@media (max-width: 768px) {
   .container {
-    padding: 0 20px;
+    width: 80%;
   }
 }
+/* Import Koh Santepheap font */
+@import url('https://fonts.googleapis.com/css2?family=Koh+Santepheap&display=swap');
 
-@media (max-width: 768px) {
-  .main-box {
-    padding: 20px;
-  }
-  
-  .feedback-input {
-    width: 95%;
-  }
-  
-  h2 {
-    font-size: 28px;
-  }
-  
-  p, .feedback-textarea, .submit-button {
-    font-size: 14px;
-  }
+/* Apply font globally */
+* {
+  font-family: 'Koh Santepheap', display;
 }
 </style>
