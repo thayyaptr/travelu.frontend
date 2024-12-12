@@ -53,17 +53,18 @@
           size="1.75rem"
           @click="toggleMenu"
           aria-label="Toggle Menu"
-        />
-        <q-menu v-model="menu" auto-close>
-          <q-list>
-            <q-item @click="goToLogin">
-              <q-item-section>Login</q-item-section>
-            </q-item>
-            <q-item @click="goToRegister">
-              <q-item-section>Register</q-item-section>
-            </q-item>
-          </q-list>
-        </q-menu>
+        >
+          <q-menu transition-show="jump-down" transition-hide="jump-up">
+            <q-list style="min-width: 100px">
+              <q-item @click="goToLogin" clickable>
+                <q-item-section>Login</q-item-section>
+              </q-item>
+              <q-item @click="goToRegister" clickable>
+                <q-item-section>Register</q-item-section>
+              </q-item>
+            </q-list>
+          </q-menu>
+        </q-btn>
       </q-col>
     </q-toolbar>
   </q-header>
