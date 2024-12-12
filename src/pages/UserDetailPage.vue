@@ -1,6 +1,6 @@
 <template>
-  <q-page>
-    <UserDetailContent />
+  <q-page style="display: flex; justify-content: center; align-items: flex-start">
+    <UserDetailContent style="width:80%"/>
   </q-page>
 </template>
 
