@@ -23,7 +23,7 @@ const routes = [
         component: () => import("pages/PaymentStatusFailedPage.vue"),
       },
       {
-        path: "orderticket",
+        path: "order",
         component: () => import("pages/OrderTicketPage.vue"),
       },
     ],

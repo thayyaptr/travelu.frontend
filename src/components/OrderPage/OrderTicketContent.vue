@@ -2,10 +2,15 @@
   <div class="q-pa-lg flex flex-center">
     <div class="col q-pt-lg" style="width: 90%">
       <!-- Informasi Utama -->
-      <div class="row" style="font-size: 1.5rem">
-        <div class="col-7 text-align text-black" style="font-weight: bold;">
-          Bandung, Buah Batu -> Jakarta, Grogol <br />
-          Monday, 28 October 2024 | 1 Passenger
+      <div class="row" style="font-size: 2rem">
+        <div class="col-7 text-align text-black">
+          <span style="text-transform: uppercase">
+            {{ departureKota.name }}, {{ departureLabel.name }} -
+            {{ destinationKota.name }}, {{ destinationLabel.name }} <br />
+          </span>
+          <span style="font-size: 1.5rem">
+            {{ formatDate(date) }} | {{ passengerCount }} Penumpang
+          </span>
         </div>
 
         <div
@@ -15,7 +20,7 @@
           <br />
           <div class="dropdown-container">
             <button class="dropdown-btn" @click="toggleDropdown">
-              Change Destination
+              Ganti Destinasi
               <span class="dropdown-arrow"></span>
             </button>
             <ul v-if="isOpen" class="dropdown-menu">
@@ -27,47 +32,137 @@
         </div>
       </div>
 
-      <hr style="border: 1px solid black; margin: 10px 0" />
+      <hr class="row" style="border: 1px solid black; margin: 10px 0" />
+
       <!-- Select Departure Time -->
       <div
         class="row q-my-sm"
         style="background-color: #f0f0f9; font-size: 1.2rem"
       >
         <!-- Section 1 -->
-        <div class="row q-my-sm" style="width: 100%; margin-left:15px; margin-right:15px">
-            <div class="col-8" style="margin-left: 30px; margin-top: 10px;">
-            <img src="https://cdn4.iconfinder.com/data/icons/delivery-shipping-4/32/delivery-25-512.png" alt="BCA Mobile Logo" style="height:2rem;width:2rem
-                    ;">
-                    <div class="value" style="font-weight: bold; margin-left:5px;" >Travel-U</div>
-            <div class="value" style="font-size:0.9rem;">07.00  Pool Buah Batu</div><br>
-            <div class="value" style="font-size:0.5rem;">3j 0m</div><br>
-            <div class="value" style="font-size:0.9rem;">10.00  Pool Grogol</div>
-            
+        <div
+          class="row q-my-sm"
+          style="width: 100%; margin-left: 15px; margin-right: 15px"
+        >
+          <div class="col-8" style="margin-left: 30px; margin-top: 10px">
+            <img
+              src="https://cdn4.iconfinder.com/data/icons/delivery-shipping-4/32/delivery-25-512.png"
+              alt="BCA Mobile Logo"
+              style="height: 2rem; width: 2rem"
+            />
+            <div class="value" style="font-weight: bold; margin-left: 5px">
+              Travel-U
+            </div>
+            <div class="value" style="font-size: 0.9rem">
+              07.00 Pool Buah Batu
+            </div>
+            <br />
+            <div class="value" style="font-size: 0.5rem">3j 0m</div>
+            <br />
+            <div class="value" style="font-size: 0.9rem">10.00 Pool Grogol</div>
           </div>
-            <div class="col-2" style="margin-left: 30px; margin-top: 10px;">
-            <br>
-            <div class="value" style="font-size:0.9rem;">Rp 150.000/seat</div>
-            <div class="value" style="font-size:0.9rem;">8 Capacity</div>
+          <div class="col-2" style="margin-left: 30px; margin-top: 10px">
+            <br />
+            <div class="value" style="font-size: 0.9rem">Rp 150.000/seat</div>
+            <div class="value" style="font-size: 0.9rem">8 Capacity</div>
           </div>
         </div>
-
       </div>
-        
     </div>
   </div>
 </template>
 
 <script>
+import { ref, onMounted } from "vue";
+import { useRoute } from "vue-router";
+import { api } from "boot/axios";
+
 export default {
-  data() {
-    return {
-      isOpen: false, // Mengontrol buka/tutup dropdown
+  setup() {
+    const route = useRoute();
+
+    // Access query parameters
+    const departureId = route.query.departure;
+    const destinationId = route.query.destination;
+    const passengerCount = route.query.passengerCount;
+    const date = ref(new Date(route.query.date));
+
+    // Reactive properties to hold the fetched data
+    const departureLabel = ref("");
+    const destinationLabel = ref("");
+    const departureKota = ref("");
+    const destinationKota = ref("");
+
+    // Function to fetch data from the API
+    const fetchData = async () => {
+      try {
+        // Fetch departure details
+        const departureResponse = await api.get(`/cabangs/${departureId}`);
+        departureLabel.value = departureResponse.data; // Assuming the response has a 'label' field
+        const departureKotaResponse = await api.get(
+          `/kotas/${departureResponse.data.kotaId}`
+        ); // Assuming the kota ID is in the response
+        departureKota.value = departureKotaResponse.data; // Assuming the response has a 'kota' field
+
+        // Fetch destination details
+        const destinationResponse = await api.get(`/cabangs/${destinationId}`);
+        destinationLabel.value = destinationResponse.data; // Assuming the response has a 'label' field
+        const destinationKotaResponse = await api.get(
+          `/kotas/${destinationResponse.data.kotaId}`
+        ); // Assuming the kota ID is in the response
+        destinationKota.value = destinationKotaResponse.data; // Assuming the response has a 'kota' field
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
     };
-  },
-  methods: {
-    toggleDropdown() {
-      this.isOpen = !this.isOpen; // Membalik status dropdown
-    },
+
+    const formatDate = (date) => {
+      const days = [
+        "Minggu",
+        "Senin",
+        "Selasa",
+        "Rabu",
+        "Kamis",
+        "Jumat",
+        "Sabtu",
+      ];
+      const months = [
+        "Januari",
+        "Februari",
+        "Maret",
+        "April",
+        "Mei",
+        "Juni",
+        "Juli",
+        "Agustus",
+        "September",
+        "Oktober",
+        "November",
+        "Desember",
+      ];
+
+      const dayOfWeek = days[date.getDay()];
+      const day = date.getDate();
+      const month = months[date.getMonth()];
+      const year = date.getFullYear();
+
+      return `${dayOfWeek}, ${day} ${month} ${year}`;
+    };
+
+    // Fetch data when the component is mounted
+    onMounted(() => {
+      fetchData();
+    });
+
+    return {
+      departureLabel,
+      destinationLabel,
+      departureKota,
+      destinationKota,
+      passengerCount,
+      date,
+      formatDate,
+    };
   },
 };
 </script>
@@ -143,5 +238,4 @@ export default {
 .dropdown-item:hover {
   background-color: #f5f5f5;
 }
-
 </style>

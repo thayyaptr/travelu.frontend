@@ -4,7 +4,9 @@
       style="background-color: #0077b6; color: white; font-size: 2rem"
       class="q-pa-sm"
     >
-      <img :src="logo" style="max-height: 7vh" />
+      <a href="/">
+        <img :src="logo" style="max-height: 7vh" />
+      </a>
       <span style="font-weight: bold" class="q-mr-lg">Travel-U</span>
     </q-toolbar>
   </q-header>

@@ -1,6 +1,8 @@
 <template>
-  <q-page>
-    <OrderTicketContent />
+  <q-page
+    style="display: flex; justify-content: center; align-items: flex-start"
+  >
+    <OrderTicketContent style="width: 90%" />
   </q-page>
 </template>
 

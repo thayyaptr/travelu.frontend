@@ -136,7 +136,9 @@
 
 <script setup>
 import { ref, computed } from "vue";
+import { useRouter } from "vue-router";
 
+const router = useRouter();
 const props = defineProps({
   KotaList: Array,
   CabangList: Array,
@@ -169,7 +171,9 @@ const groupedCabangOptions = computed(() => {
       cabangs.forEach((cabang) => {
         options.push({
           label: cabang.name,
-          value: cabang.id,
+          kota: kota.name,
+          id: cabang.id,
+          kotaId: kota.id,
         });
       });
     }
@@ -181,9 +185,9 @@ const groupedCabangOptions = computed(() => {
 // Handle form submission
 const onSubmit = () => {
   const payload = {
-    departure: departure.value,
-    destination: destination.value,
-    passengerCount: passengerCount.value,
+    departure: departure.value.id,
+    destination: destination.value.id,
+    passengerCount: passengerCount.value.value,
     date: date.value,
   };
 
@@ -191,7 +195,7 @@ const onSubmit = () => {
   console.log("Form submitted with:", payload);
   // You can use a router to navigate to another page and pass the payload as query parameters or state
   // For example, using Vue Router:
-  // router.push({ name: 'Your DestinationPage', query: payload });
+  router.push({ path: "/order", query: payload });
 };
 </script>
 
