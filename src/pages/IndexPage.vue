@@ -1,13 +1,15 @@
 <template>
-  <q-page v-if="loadedKota && loadedCabang">
+  <q-page>
     <BannerHome />
-    <ClickAndGo :KotaList="KotaList" :CabangList="CabangList" />
+    <!-- <ClickAndGo :KotaList="KotaList" :CabangList="CabangList" /> -->
+    <DestinasiWisata />
   </q-page>
 </template>
 
 <script>
 import BannerHome from "../components/IndexPage/BannerHome.vue";
 import ClickAndGo from "../components/IndexPage/ClickAndGo.vue";
+import DestinasiWisata from "../components/IndexPage/DestinasiWisata.vue";
 import { ref, onMounted } from "vue";
 import { api } from "boot/axios";
 
@@ -15,7 +17,8 @@ export default {
   name: "IndexPage",
   components: {
     BannerHome,
-    ClickAndGo,
+    // ClickAndGo,
+    DestinasiWisata,
   },
   setup() {
     const loadedKota = ref(false);
@@ -47,8 +50,8 @@ export default {
     }
 
     onMounted(() => {
-      loadKota();
-      loadCabang();
+      // loadKota();
+      // loadCabang();
     });
 
     return {
