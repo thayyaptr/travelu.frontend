@@ -63,11 +63,13 @@
         <q-typography tag="h5" class="text-blue">
           Already have an account?
         </q-typography>
-        <q-typography tag="h5" class="text-red"> Sign In </q-typography>
+        <a href="login">
+          <q-typography tag="h5" class="text-red"> Sign In </q-typography>
+        </a>
       </div>
     </div>
   </div>
-  <!-- <VerifEmail :email="laudadrakagmailcom" /> -->
+  <VerifEmail v-if="successRegist" :email="laudadrakagmailcom" />
 </template>
 
 <script>
@@ -79,7 +81,7 @@ import VerifEmail from "./VerifEmail.vue";
 export default {
   name: "App",
   components: {
-    // VerifEmail,
+    VerifEmail,
   },
   setup() {
     const $q = useQuasar();
@@ -88,6 +90,7 @@ export default {
     const password = ref("");
     const emailError = ref("");
     const passwordError = ref("");
+    const successRegist = ref(false);
 
     const onSubmit = async () => {
       emailError.value = "";
@@ -121,11 +124,11 @@ export default {
           name: fullName.value,
           email: email.value,
           password: password.value,
-          permissions: "0", // Will be implicitly made into 0
+          noTelp: "0", // Will be implicitly made into 0
         };
 
         try {
-          const response = await api.post(`/api/users`, requestBody);
+          const response = await api.post(`pelanggans`, requestBody);
           console.log("User  created successfully:", response.data);
           // You can add further actions here, like redirecting the user or showing a success message
         } catch (error) {

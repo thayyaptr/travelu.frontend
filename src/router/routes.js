@@ -26,6 +26,10 @@ const routes = [
         path: "order",
         component: () => import("pages/OrderTicketPage.vue"),
       },
+      {
+        path: "userdetail",
+        component: () => import("pages/UserDetailPage.vue"),
+      },
     ],
   },
   {
@@ -54,6 +58,7 @@ const routes = [
     path: "/:catchAll(.*)*",
     component: () => import("pages/ErrorNotFound.vue"),
   },
+  
 ];
 
 export default routes;

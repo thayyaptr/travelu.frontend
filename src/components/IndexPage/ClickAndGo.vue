@@ -169,12 +169,22 @@ const groupedCabangOptions = computed(() => {
     });
     if (cabangs.length > 0) {
       cabangs.forEach((cabang) => {
-        options.push({
-          label: cabang.name,
-          kota: kota.name,
-          id: cabang.id,
-          kotaId: kota.id,
-        });
+        if (departure.value != null) {
+          if (cabang.id != departure.value.id)
+            options.push({
+              label: cabang.name,
+              kota: kota.name,
+              id: cabang.id,
+              kotaId: kota.id,
+            });
+        } else {
+          options.push({
+            label: cabang.name,
+            kota: kota.name,
+            id: cabang.id,
+            kotaId: kota.id,
+          });
+        }
       });
     }
   });

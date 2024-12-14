@@ -37,34 +37,71 @@
       <!-- Select Departure Time -->
       <div
         class="row q-my-sm"
-        style="background-color: #f0f0f9; font-size: 1.2rem"
+        style="
+          font-size: 1.2rem;
+          border-radius: 10px;
+          transition: box-shadow 0.5s ease-in-out;
+          outline: 1px solid #0077b6;
+        "
+        :class="{ 'hover-effect': hover }"
+        @mouseover="hover = true"
+        @mouseout="hover = false"
+      >
+        <!-- Section 1 -->
+        <div class="row q-my-sm q-mx-lg q-pb-md" style="width: 100%">
+          <div class="col-6">
+            <div class="row q-pb-sm">
+              <img
+                src="https://cdn4.iconfinder.com/data/icons/delivery-shipping-4/32/delivery-25-512.png"
+                alt="BCA Mobile Logo"
+                style="height: 2rem; width: 2rem"
+              />
+              <span style="font-weight: bold">Travel-U</span>
+            </div>
+            <div class="value" style="font-size: 1.1rem">
+              07.00 Pool {{ departureLabel.name }}
+            </div>
+            <br />
+            <div class="value" style="font-size: 1rem">3j 0m</div>
+            <br />
+            <div class="value" style="font-size: 1.1rem">
+              07.00 Pool {{ destinationLabel.name }}
+            </div>
+          </div>
+          <div
+            class="col-6 text-right"
+            style="
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+            "
+          >
+            <span class="value" style="font-size: 1rem">Rp 150.000/seat</span>
+            <span class="value" style="font-size: 1rem">8 Capacity</span>
+            <div class="row justify-end">
+              <q-btn color="primary" label="Pesan Sekarang!" size="lg" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="row q-my-sm"
+        style="
+          font-size: 1.2rem;
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+          border-radius: 10px;
+        "
       >
         <!-- Section 1 -->
         <div
-          class="row q-my-sm"
-          style="width: 100%; margin-left: 15px; margin-right: 15px"
+          class="row q-my-sm q-mx-lg q-pb-sm"
+          style="width: 100%; display: flex; justify-content: center"
         >
-          <div class="col-8" style="margin-left: 30px; margin-top: 10px">
-            <img
-              src="https://cdn4.iconfinder.com/data/icons/delivery-shipping-4/32/delivery-25-512.png"
-              alt="BCA Mobile Logo"
-              style="height: 2rem; width: 2rem"
-            />
-            <div class="value" style="font-weight: bold; margin-left: 5px">
-              Travel-U
-            </div>
-            <div class="value" style="font-size: 0.9rem">
-              07.00 Pool Buah Batu
-            </div>
-            <br />
-            <div class="value" style="font-size: 0.5rem">3j 0m</div>
-            <br />
-            <div class="value" style="font-size: 0.9rem">10.00 Pool Grogol</div>
-          </div>
-          <div class="col-2" style="margin-left: 30px; margin-top: 10px">
-            <br />
-            <div class="value" style="font-size: 0.9rem">Rp 150.000/seat</div>
-            <div class="value" style="font-size: 0.9rem">8 Capacity</div>
+          <div class="text-center" style="width: 75%; font-weight: 500">
+            Anda sudah mencapai batas hasil dari pencarian, silahkan lakukan
+            pencarian kembali di hari atau rute berbeda untuk mendapatkan lebih
+            banyak keberangkatan
           </div>
         </div>
       </div>
@@ -92,6 +129,9 @@ export default {
     const destinationLabel = ref("");
     const departureKota = ref("");
     const destinationKota = ref("");
+
+    const hover = ref(false);
+    const isOpen = ref(false);
 
     // Function to fetch data from the API
     const fetchData = async () => {
@@ -162,6 +202,8 @@ export default {
       passengerCount,
       date,
       formatDate,
+      hover,
+      isOpen,
     };
   },
 };
@@ -169,16 +211,8 @@ export default {
 
 <style scoped>
 /* Gaya untuk container rounded rectangle */
-.row.q-my-sm {
-  border-radius: 15px; /* Membuat sudut membulat */
-  overflow: hidden; /* Opsional, untuk memastikan isi container tetap rapi */
-}
-
-/* Gaya untuk label */
-.span {
-  color: #555; /* Warna abu-abu untuk label */
-  font-size: 0.9rem; /* Ukuran font lebih kecil untuk label */
-  font-weight: normal; /* Berat font normal */
+.hover-effect {
+  box-shadow: 0 4px 8px #0077b6;
 }
 
 /* Gaya untuk value */
