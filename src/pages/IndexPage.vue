@@ -9,7 +9,7 @@
 <script>
 import BannerHome from "../components/IndexPage/BannerHome.vue";
 import ClickAndGo from "../components/IndexPage/ClickAndGo.vue";
-import DestinasiWisata from "../components/IndexPage/DestinasiWisata.vue";
+import DestinasiWisata from "./DestinasiWisata.vue";
 import { ref, onMounted } from "vue";
 import { api } from "boot/axios";
 
@@ -17,7 +17,7 @@ export default {
   name: "IndexPage",
   components: {
     BannerHome,
-    // ClickAndGo,
+    //ClickAndGo,
     DestinasiWisata,
   },
   setup() {

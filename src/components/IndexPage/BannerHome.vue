@@ -30,7 +30,7 @@ const slide = ref(1);
 
 // Define an array of slides for better maintainability
 const slides = [
-  { name: 1, imgSrc: "jakarta.png" },
+  { name: 1, imgSrc: "public/jakarta.jpg" },
   { name: 2, imgSrc: "Gedung_Sate_Bandung_Jawa_Barat.jpg" },
   { name: 3, imgSrc: "surabaya.jpg" },
   { name: 4, imgSrc: "bandung3.jpg" },
